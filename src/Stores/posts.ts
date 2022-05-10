@@ -10,7 +10,6 @@ export function fetchBestPosts() {
     }
     const load = async () => {
         const data = (await (await fetch('https://www.reddit.com/best.json')).json() as any).data.children as IPost[];
-        console.log(data)
         cache.set('best_posts', data);
         store.set(Promise.resolve(data));
     }
@@ -32,3 +31,4 @@ export function fetchSubreddit(subreddit: string) {
     load();
     return store;
 }
+

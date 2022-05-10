@@ -140,3 +140,26 @@ export interface IPost{
 		wls: number | null;
 	}
 }
+
+interface MediaInfoDetail {
+  url: string;
+  height: number;
+  width: number; 
+}
+export interface MediaInfo{
+  isPortrait: boolean;
+  isImage: boolean;
+  isVideo: boolean;
+  isLink: boolean;
+  isGallery: boolean;
+  isSelf: boolean;
+  isTweet: boolean;
+  isIframe: boolean;
+  hasMedia: boolean;
+  videoInfo: MediaInfoDetail;
+  imageInfo: MediaInfoDetail[];
+  thumbnailInfo: MediaInfoDetail[];
+  gallery: MediaInfoDetail[];
+  dimensions: [number, number];
+  iFrameHTML: Element | null;
+}
